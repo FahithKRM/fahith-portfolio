@@ -1,6 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
-};
+  experimental: {
+    serverActions: true,
+  },
+  images: {
+    domains: ['localhost', '127.0.0.1'],
+    unoptimized: true,
+  },
+  env: {
+    MONGODB_URI: process.env.MONGODB_URI,
+    JWT_SECRET: process.env.JWT_SECRET,
+  },
+}
 
-export default nextConfig;
+module.exports = nextConfig;
